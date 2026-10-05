@@ -184,6 +184,7 @@ export const DATA = {
       githubUrl: null,
       demoUrl: null,
     },
+  ],
   languages: ["English", "Hindi", "Malayalam"],
 };
 
