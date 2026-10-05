@@ -184,30 +184,6 @@ export const DATA = {
       githubUrl: null,
       demoUrl: null,
     },
-  ],
-  certifications: [
-    {
-      id: "datascientist",
-      title: "Data Scientist",
-      issuer: "NASSCOM",
-      date: "January 2026",
-      featured: true,
-    },
-    {
-      id: "ml",
-      title: "Introduction to Machine Learning",
-      issuer: "MBCET",
-      date: "August 2024",
-      featured: false,
-    },
-    {
-      id: "cloud",
-      title: "Cloud Computing",
-      issuer: "Teachnook",
-      date: "February 2022",
-      featured: false,
-    },
-  ],
   languages: ["English", "Hindi", "Malayalam"],
 };
 
@@ -217,6 +193,5 @@ export const NAV_ITEMS = [
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
-  { id: "certifications", label: "Certifications" },
   { id: "contact", label: "Contact" },
 ];

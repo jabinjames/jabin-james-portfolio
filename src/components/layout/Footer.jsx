@@ -255,10 +255,6 @@ const Footer = () => {
               Projects
             </button>
 
-            <button onClick={() => scrollToSection("certifications")}>
-              Certifications
-            </button>
-
             <button onClick={() => scrollToSection("experience")}>
               Experience
             </button>

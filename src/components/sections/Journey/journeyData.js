@@ -31,14 +31,6 @@ export const JOURNEY_NODES = [
     y: 65.6,
   },
   {
-    id: "certifications",
-    label: "Certifications",
-    icon: "Award",
-    colorVar: "--jr-certs",
-    x: 56.25,
-    y: 75,
-  },
-  {
     id: "experience",
     label: "Experience",
     icon: "Briefcase",
@@ -63,8 +55,7 @@ export const JOURNEY_NODES = [
 export const ROAD_SEGMENTS = [
   "M90,430 C200,380 260,360 380,330",
   "M380,330 C480,305 560,380 650,420",
-  "M650,420 C730,455 800,500 900,480",
-  "M900,480 C980,462 1040,380 1160,340",
+  "M650,420 C780,470 1020,400 1160,340",
   "M1160,340 C1280,300 1360,380 1450,420",
 ];
 

@@ -1,10 +1,10 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { Flag, GraduationCap, Boxes, Award, Briefcase, Compass } from "lucide-react";
+import { Flag, GraduationCap, Boxes, Briefcase, Compass } from "lucide-react";
 import { usePrefersReducedMotion } from "../../../hooks/usePrefersReducedMotion.js";
 import { JOURNEY_NODES, ROAD_SEGMENTS, FULL_ROAD_D, VIEW_W, VIEW_H } from "./journeyData.js";
 import JourneyPanel from "./JourneyPanel.jsx";
 
-const ICONS = { Flag, GraduationCap, Boxes, Award, Briefcase, Compass };
+const ICONS = { Flag, GraduationCap, Boxes, Briefcase, Compass };
 
 function useCoarsePointer() {
   const [coarse, setCoarse] = useState(false);
