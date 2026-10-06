@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import { NAV_ITEMS } from "./data/resume.js";
 
 import { usePrefersReducedMotion } from "./hooks/usePrefersReducedMotion.js";
@@ -64,6 +65,7 @@ export default function App() {
       </main>
 
       <Footer />
+      <Analytics />
     </div>
   );
 }
