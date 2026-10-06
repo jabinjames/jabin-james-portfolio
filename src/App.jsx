@@ -13,12 +13,9 @@ import Nav from "./components/layout/Nav.jsx";
 import Footer from "./components/layout/Footer.jsx";
 
 import Hero from "./components/sections/Hero.jsx";
-import About from "./components/sections/About.jsx";
 import Experience from "./components/sections/Experience.jsx";
 import Skills from "./components/sections/Skills.jsx";
 import Projects from "./components/sections/Projects.jsx";
-import Education from "./components/sections/Education.jsx";
-import Contact from "./components/sections/Contact.jsx";
 
 const SECTION_IDS = NAV_ITEMS.map((n) => n.id);
 
@@ -61,12 +58,9 @@ export default function App() {
 
       <main>
         <Hero />
-        <About />
         <Experience />
         <Skills />
         <Projects />
-        <Education />
-        <Contact />
       </main>
 
       <Footer />

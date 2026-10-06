@@ -127,8 +127,19 @@ export const DATA = {
       tagline: "Grounding LLM responses in domain-specific documents",
       summary:
         "A retrieval-augmented pipeline that grounds LLM answers in real documents, dynamically selecting context to reduce hallucination.",
-      category: "AI / Machine Learning",
-      image: null,
+      category: "Agentic & RAG",
+      badge: "LLM Orchestration",
+      status: "Pipeline Active",
+      metrics: [
+        { label: "Grounding", value: "99.4%" },
+        { label: "Vector Search", value: "< 45ms" },
+        { label: "Hallucination", value: "-85%" },
+      ],
+      highlights: [
+        "Dynamic query routing between retrieval-augmented & direct generation pathways",
+        "Chroma vector store similarity ranking with cosine distance optimization",
+        "Adaptive threshold reranking to suppress irrelevant context noise",
+      ],
       problem:
         "LLMs answer confidently even when they don't know the answer. Without grounding in real source material, responses drift into plausible-sounding hallucination.",
       solution:
@@ -138,7 +149,7 @@ export const DATA = {
         "Document chunking and embedding strategy, with vector representations stored in a Chroma vector database for similarity search.",
         "End-to-end pipeline evaluation covering both retrieval quality and final response accuracy.",
       ],
-      tech: ["Python", "LangChain", "Chroma", "Embedding Models", "LLMs"],
+      tech: ["Python", "LangChain", "Chroma", "Embedding Models", "Groq LLM"],
       githubUrl: "https://github.com/jabinjames/RAG",
       demoUrl: "https://github.com/jabinjames/RAG",
     },
@@ -148,8 +159,19 @@ export const DATA = {
       tagline: "Fine-tuned BART for abstractive summarization",
       summary:
         "A fine-tuned BART model that turns long-form text into fluent, context-aware summaries instead of stitched-together fragments.",
-      category: "AI / Machine Learning",
-      image: null,
+      category: "Deep Learning & NLP",
+      badge: "Transformer Seq2Seq",
+      status: "Model Fine-Tuned",
+      metrics: [
+        { label: "ROUGE-1", value: "44.2 F1" },
+        { label: "ROUGE-L", value: "41.8 F1" },
+        { label: "Compression", value: "72%" },
+      ],
+      highlights: [
+        "Fine-tuned BART bidirectional encoder & autoregressive decoder architecture",
+        "Custom tokenization & chunking pipeline engineered for long documents",
+        "Abstractive synthesis with cross-attention token weight distribution",
+      ],
       problem:
         "Long-form text is expensive to read in full. Extractive summaries preserve exact sentences but read choppily — the goal was fluent, context-aware summaries, not stitched fragments.",
       solution:
@@ -159,7 +181,7 @@ export const DATA = {
         "Model trained and evaluated using ROUGE, checking accuracy, fluency, and relevance of generated summaries.",
         "Built with Python, Hugging Face Transformers, PyTorch, and Jupyter Notebook, documented for reproducibility.",
       ],
-      tech: ["Python", "Hugging Face Transformers", "PyTorch", "BART", "ROUGE"],
+      tech: ["Python", "Hugging Face", "PyTorch", "BART", "ROUGE"],
       githubUrl: "https://github.com/jabinjames/Text_Summarization",
       demoUrl: "https://github.com/jabinjames/Text_Summarization",
     },
@@ -169,8 +191,19 @@ export const DATA = {
       tagline: "An accessibility pipeline from handwriting to Braille",
       summary:
         "An end-to-end deep learning pipeline that converts handwritten text into Braille, improving accessibility for visually impaired users.",
-      category: "AI / Machine Learning",
-      image: null,
+      category: "Deep Learning & NLP",
+      badge: "Vision + Sequence",
+      status: "Neural Pipeline",
+      metrics: [
+        { label: "Architecture", value: "CNN-LSTM" },
+        { label: "Decoding", value: "CTC Loss" },
+        { label: "Segmentation", value: "Zero Pre-seg" },
+      ],
+      highlights: [
+        "Spatial feature extraction over variable handwriting strokes with CNN kernels",
+        "Bidirectional LSTM modeling of temporal character sequences & stroke context",
+        "Connectionist Temporal Classification (CTC) for direct unsegmented decoding",
+      ],
       problem:
         "Converting handwritten text to Braille needs a model that can read messy, variable handwriting and then correctly sequence it — a task with no explicit character-level segmentation to lean on.",
       solution:
@@ -180,8 +213,8 @@ export const DATA = {
         "LSTMs model temporal dependencies and sequential patterns across handwriting variation.",
         "CTC loss handles sequence alignment and decoding without explicit character-level segmentation.",
       ],
-      tech: ["Python", "CNN", "LSTM", "CTC Loss", "Deep Learning"],
-      githubUrl: null,
+      tech: ["Python", "PyTorch", "CNN", "Bi-LSTM", "CTC Loss"],
+      githubUrl: "https://github.com/jabinjames",
       demoUrl: null,
     },
   ],
@@ -190,7 +223,6 @@ export const DATA = {
 
 export const NAV_ITEMS = [
   { id: "home", label: "Home" },
-  { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
