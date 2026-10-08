@@ -1,3 +1,5 @@
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from '@vercel/analytics/next';
 import React, { useEffect, useState } from "react";
 import { NAV_ITEMS } from "./data/resume.js";
 
@@ -64,6 +66,8 @@ export default function App() {
       </main>
 
       <Footer />
+      <SpeedInsights />
+      <Analytics />
     </div>
   );
 }
