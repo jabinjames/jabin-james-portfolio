@@ -31,18 +31,18 @@ export const DATA = {
       ],
       tech: ["Python", "LangChain", "LangGraph", "REST APIs", "Groq LLM"],
     },
-    {
-      org: "National Service Scheme (NSS)",
-      role: "Volunteer",
-      location: "Pathanamthitta",
-      duration: "Ongoing",
-      state: "complete",
-      points: [
-        "Organized community outreach programs and health awareness camps for over 500 participants.",
-        "Completed 100+ hours of community service, including environmental conservation projects.",
-      ],
-      tech: [],
-    },
+    // {
+    //   org: "National Service Scheme (NSS)",
+    //   role: "Volunteer",
+    //   location: "Pathanamthitta",
+    //   duration: "Ongoing",
+    //   state: "complete",
+    //   points: [
+    //     "Organized community outreach programs and health awareness camps for over 500 participants.",
+    //     "Completed 100+ hours of community service, including environmental conservation projects.",
+    //   ],
+    //   tech: [],
+    // },
   ],
   education: [
     {
@@ -219,6 +219,18 @@ export const DATA = {
     },
   ],
   languages: ["English", "Hindi", "Malayalam"],
+  extraCurricular: [
+  {
+    org: "National Service Scheme (NSS)",
+    role: "Volunteer",
+    location: "Pathanamthitta",
+    duration: "Ongoing",
+    points: [
+      "Organized community outreach programs and health awareness camps for over 500 participants.",
+      "Completed 100+ hours of community service, including environmental conservation projects.",
+    ],
+  },
+],
 };
 
 export const NAV_ITEMS = [
