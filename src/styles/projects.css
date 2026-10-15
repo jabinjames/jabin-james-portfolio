@@ -501,7 +501,18 @@
   color: var(--amber);
   background: rgba(231, 163, 62, 0.08);
   border-color: rgba(231, 163, 62, 0.2);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  transition: all 0.2s ease;
 }
+
+.tech-tag--more:hover {
+  background: rgba(231, 163, 62, 0.18);
+  border-color: rgba(231, 163, 62, 0.45);
+  color: #FFCD72;
+  transform: translateY(-1px);
+}
+
 
 /* Card Actions / Footer */
 .project-card__actions {

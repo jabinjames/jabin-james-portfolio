@@ -12,7 +12,7 @@ const SEQ_LEN = SEQUENCE.length;
 
 const INTERIM_FRAMES = 3; // how many "wrong" letters flash by before settling
 const FRAME_MS = 70; // speed of each interim flash
-const STAGGER_MS = 95; // delay between each letter's burst start â€” creates the wave
+const STAGGER_MS = 95; // delay between each letter's burst start — creates the wave
 const PAUSE_MS = 3000; // hold the fully readable name before the next sweep
 const INITIAL_DELAY_MS = 1600; // let the hero's own entrance animation settle first
 
@@ -70,7 +70,7 @@ export default function HeroName() {
     };
 
     // One full sweep across every letter, then a clean readable pause,
-    // then the whole thing restarts from the beginning â€” forever.
+    // then the whole thing restarts from the beginning — forever.
     const playCycle = () => {
       if (!mounted) return;
       LETTER_INDICES.forEach((fullIndex, k) => {
@@ -89,15 +89,37 @@ export default function HeroName() {
     };
   }, [reducedMotion]);
 
+  // Group characters into discrete words so wrapping on narrow viewports is clean
+  const words = [];
+  let currentWord = [];
+  chars.forEach((c, i) => {
+    if (c === " ") {
+      if (currentWord.length > 0) {
+        words.push({ type: "word", items: currentWord });
+        currentWord = [];
+      }
+      words.push({ type: "space", index: i });
+    } else {
+      currentWord.push({ char: c, index: i, burstKey: burstKeys[i] });
+    }
+  });
+  if (currentWord.length > 0) {
+    words.push({ type: "word", items: currentWord });
+  }
+
   return (
     <span className="hero-name" aria-label={DISPLAY}>
       <span className="hero-name__visual" aria-hidden="true">
-        {chars.map((c, i) =>
-          c === " " ? (
-            <span key={i} className="hero-name__space" />
+        {words.map((w, wi) =>
+          w.type === "space" ? (
+            <span key={`sp-${w.index}`} className="hero-name__space" />
           ) : (
-            <span key={`${i}-${burstKeys[i]}`} className="hero-name__char">
-              {c}
+            <span key={`w-${wi}`} className="hero-name__word">
+              {w.items.map((item) => (
+                <span key={`${item.index}-${item.burstKey}`} className="hero-name__char">
+                  {item.char}
+                </span>
+              ))}
             </span>
           )
         )}

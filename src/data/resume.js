@@ -3,7 +3,7 @@ export const DATA = {
   title: "AI / Software Engineer",
   location: "Pathanamthitta, Kerala, India",
   email: "jabinjames.dev@gmail.com",
-  phone: "+91-9526612086",
+  phone: "NIL",
   linkedin: "https://www.linkedin.com/in/jabinjames/",
   summary:
     "I build systems that reason in steps. My background is in software engineering and applied AI — most recently architecting stateful, multi-agent LLM workflows during an AI research internship, where natural language turned into orchestrated API calls instead of manual data-fetching. I like the layer where language models stop being a chat box and start being a component in a larger system: state graphs, tool calls, retrieval pipelines, conditional routing.",
@@ -17,11 +17,10 @@ export const DATA = {
   ],
   experience: [
     {
-      org: "TalksandTalks",
       role: "AI Research Intern",
       location: "Kochi",
       duration: "Feb 2026 — Aug 2026",
-      state: "active",
+      state: "completed",
       points: [
         "Architected a stateful, multi-step reasoning engine using LangGraph StateGraph, implementing reflection patterns and conditional edge routing to automate sequential API orchestration.",
         "Developed a natural language query engine with LangChain that translates complex English queries into functional API calls, removing manual data-fetching for end users.",

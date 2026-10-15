@@ -61,7 +61,7 @@ function ExperiencePanel() {
       <p className="jr-panel__eyebrow">Learning through doing</p>
       <h3>{exp.role}</h3>
       <p className="jr-panel__body">
-        {exp.org} â€” {exp.location}, {exp.duration}. Architecting stateful LangGraph workflows, turning
+        {exp.org ? `${exp.org} — ` : ""}{exp.location}, {exp.duration}. Architecting stateful LangGraph workflows, turning
         natural language into orchestrated API calls, and building the tooling that connects LLMs to
         real systems.
       </p>
@@ -82,7 +82,7 @@ function NextPanel() {
       <p className="jr-panel__eyebrow">Still exploring</p>
       <h3>Bigger problems, next</h3>
       <p className="jr-panel__body">
-        I'm looking for roles and collaborations in AI engineering and backend systems â€” places where I
+        I'm looking for roles and collaborations in AI engineering and backend systems — places where I
         can keep working at the layer where language models become part of a larger, reasoning system.
       </p>
       <a href={`mailto:${DATA.email}`} className="btn btn--primary jr-panel__cta" data-cursor="MAIL">

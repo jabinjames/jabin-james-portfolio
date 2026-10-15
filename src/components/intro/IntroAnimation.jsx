@@ -4,7 +4,7 @@ import { generateShards } from "./shardUtils.js";
 import { playShatterSound } from "./playShatterSound.js";
 
 const SESSION_KEY = "intro-played";
-const HOLD_MS = 3000; // 0.2s appear + hold, per spec ends at ~3.0s
+const HOLD_MS = 2200; // 0.2s appear + hold, ends at ~2.2s before shatter
 const APPEAR_DELAY_MS = 200;
 const SHATTER_MS = 700;
 const CLEANUP_BUFFER_MS = 350;
@@ -66,11 +66,10 @@ export default function IntroAnimation({ onFinish }) {
   };
 
   useEffect(() => {
-    if (phase === "skip") {
+    if (alreadyPlayed || reducedMotion) {
       finish();
       return;
     }
-    if (phase !== "hold-pending") return;
 
     const t1 = setTimeout(() => setPhase("hold"), APPEAR_DELAY_MS);
     const t2 = setTimeout(() => {
@@ -82,9 +81,10 @@ export default function IntroAnimation({ onFinish }) {
     timers.current = [t1, t2, t3];
     return clearTimers;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [phase === "hold-pending"]);
+  }, []);
 
-  const skipIntro = () => {
+  const skipIntro = (e) => {
+    e?.stopPropagation?.();
     if (phase === "shatter" || phase === "done" || phase === "skip") return;
     setPhase("shatter");
     playShatterSound();

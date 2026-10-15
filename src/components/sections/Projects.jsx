@@ -91,7 +91,15 @@ function ProjectCard({ project, index, onOpen }) {
             </span>
           ))}
           {project.tech.length > 4 && (
-            <span className="tech-tag tech-tag--more">+{project.tech.length - 4}</span>
+            <button
+              type="button"
+              className="tech-tag tech-tag--more"
+              onClick={() => onOpen(project)}
+              title={`View all ${project.tech.length} technologies`}
+              aria-label={`Show all tech stack for ${project.name}`}
+            >
+              +{project.tech.length - 4} more
+            </button>
           )}
         </div>
       </div>

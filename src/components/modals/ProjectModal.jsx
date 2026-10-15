@@ -6,11 +6,17 @@ export default function ProjectModal({ project, onClose }) {
   const ref = useRef(null);
 
   useEffect(() => {
+    if (!project) return undefined;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     const onKey = (e) => e.key === "Escape" && onClose();
     document.addEventListener("keydown", onKey);
     ref.current?.focus();
-    return () => document.removeEventListener("keydown", onKey);
-  }, [onClose]);
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [project, onClose]);
 
   if (!project) return null;
 

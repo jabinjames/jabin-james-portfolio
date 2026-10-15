@@ -1,3 +1,4 @@
+import Agent from './components/Agent/Agent';
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
 import React, { useEffect, useState } from "react";
@@ -27,7 +28,14 @@ export default function App() {
   const progress = useScrollProgress();
   const [compact, setCompact] = useState(false);
   const [fineCursor, setFineCursor] = useState(false);
-  const [introDone, setIntroDone] = useState(false);
+  const [introDone, setIntroDone] = useState(() => {
+    if (reducedMotion) return true;
+    try {
+      return sessionStorage.getItem("intro-played") === "1";
+    } catch {
+      return false;
+    }
+  });
 
   useReveal(reducedMotion);
 
@@ -68,6 +76,7 @@ export default function App() {
       <Footer />
       <SpeedInsights />
       <Analytics />
+      <Agent />
     </div>
   );
 }

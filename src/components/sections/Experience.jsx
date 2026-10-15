@@ -9,10 +9,10 @@ export default function Experience() {
       </div>
 
       <div className="timeline">
-        {DATA.experience.map((exp) => (
+        {DATA.experience.map((exp, index) => (
           <div
             className="timeline__item"
-            key={exp.org}
+            key={exp.role || index}
             data-reveal
             style={{ "--exp-accent": exp.state === "active" ? "var(--amber)" : "var(--teal)" }}
           >
@@ -27,7 +27,7 @@ export default function Experience() {
                 <div>
                   <h3>{exp.role}</h3>
                   <p className="timeline__org">
-                    {exp.org} â€” {exp.location}
+                    {exp.org ? `${exp.org} | ${exp.location}` : exp.location}
                   </p>
                 </div>
                 <span className="timeline__duration">{exp.duration}</span>

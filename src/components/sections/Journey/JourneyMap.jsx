@@ -18,7 +18,7 @@ function useCoarsePointer() {
   return coarse;
 }
 
-// Deterministic pseudo-random pine tree scatter â€” organic-looking without
+// Deterministic pseudo-random pine tree scatter — organic-looking without
 // needing a real RNG or a hand-typed position list.
 function buildTrees() {
   const trees = [];
@@ -132,7 +132,7 @@ function JourneyBackground() {
         ))}
       </g>
 
-      {/* lighthouse â€” a quiet nod to "still exploring" at the end of the road */}
+      {/* lighthouse — a quiet nod to "still exploring" at the end of the road */}
       <g transform="translate(1524,255)">
         <rect x="9" y="58" width="16" height="88" fill="#151b25" />
         <rect x="5" y="48" width="24" height="13" fill="#1c2330" />
