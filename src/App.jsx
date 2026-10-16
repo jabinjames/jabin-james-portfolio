@@ -1,4 +1,4 @@
-
+import Agent from "./components/Agent/Agent.jsx";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
 import React, { useEffect, useState } from "react";
@@ -76,7 +76,7 @@ export default function App() {
       <Footer />
       <SpeedInsights />
       <Analytics />
-      
+      <Agent/>
     </div>
   );
 }
